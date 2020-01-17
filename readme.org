@@ -5,6 +5,8 @@
 
 * Table of Contents :TOC_3:noexport:
 - [[#description][Description]]
+- [[#files][Files]]
+  - [[#split-large-files][Split large files]]
 - [[#database][Database]]
   - [[#export-ms-access-tables-to-csv][Export MS Access tables to csv]]
     - [[#prerequisites][Prerequisites]]
@@ -14,6 +16,12 @@
 * Description
 
 + Useful reference of code snippets and scripts
+
+* Files
+** Split large files
+Useful for uploading to github/gitlab
+- see =split_files=
+
 
 * Database
 ** Export MS Access tables to csv
