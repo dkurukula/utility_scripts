@@ -1,0 +1,32 @@
+#+TITLE:   Utility Scripts
+#+DATE:    January 17, 2020
+#+SINCE:   {replace with next tagged release version}
+#+STARTUP: inlineimages nofold
+
+* Table of Contents :TOC_3:noexport:
+- [[#description][Description]]
+- [[#database][Database]]
+  - [[#export-ms-access-tables-to-csv][Export MS Access tables to csv]]
+    - [[#prerequisites][Prerequisites]]
+    - [[#snippet][snippet]]
+- [[#prerequisites-1][Prerequisites]]
+
+* Description
+
++ Useful reference of code snippets and scripts
+
+* Database
+** Export MS Access tables to csv
+*** Prerequisites
+- mdb
+#+BEGIN_SRC bash
+apt install mdbtools
+#+END_SRC
+*** snippet
+Below assumes the db name is database.accdb
+#+BEGIN_SRC bash
+mdb-tables -d ',' database.accdb| xargs -L1 -d',' -I{} bash -c 'mdb-export database.accdb "$1" >"$1".csv' -- {}
+#+END_SRC
+
+* Prerequisites
+Probably not Windows, unless WSL
