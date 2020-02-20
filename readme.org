@@ -11,6 +11,7 @@
   - [[#export-ms-access-tables-to-csv][Export MS Access tables to csv]]
     - [[#prerequisites][Prerequisites]]
     - [[#snippet][snippet]]
+- [[#misc][Misc.]]
 - [[#prerequisites-1][Prerequisites]]
 
 * Description
@@ -34,6 +35,14 @@ apt install mdbtools
 Below assumes the db name is database.accdb
 #+BEGIN_SRC bash
 mdb-tables -d ',' database.accdb| xargs -L1 -d',' -I{} bash -c 'mdb-export database.accdb "$1" >"$1".csv' -- {}
+#+END_SRC
+
+* Misc. 
+  + replace tags from copied html
+    + vim =s/<[^>]\+>//g=
+    + shell 
+#+BEGIN_SRC bash
+sed "s/<[^>]\+>//g" file
 #+END_SRC
 
 * Prerequisites
