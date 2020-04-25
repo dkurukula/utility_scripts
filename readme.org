@@ -44,6 +44,10 @@ mdb-tables -d ',' database.accdb| xargs -L1 -d',' -I{} bash -c 'mdb-export datab
 #+BEGIN_SRC bash
 sed "s/<[^>]\+>//g" file
 #+END_SRC
+  + list file encoding
+#+begin_src bash
+file -i *
+#+end_src
 
 * Prerequisites
 Probably not Windows, unless WSL
